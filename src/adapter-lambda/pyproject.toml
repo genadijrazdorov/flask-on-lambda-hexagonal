@@ -2,16 +2,13 @@
 name = "flask-on-lambda-adapter-lambda"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Genadij Razdorov",email = "genadijrazdorov@gmail.com"}
-]
+authors = [{ name = "Genadij Razdorov", email = "genadijrazdorov@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.14"
-dependencies = [
-]
+requires-python = "~=3.14.0"
+dependencies = []
 
 [tool.poetry]
-packages = [{include = "flask_on_lambda", from = "src"}]
+packages = [{ include = "flask_on_lambda", from = "src" }]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
