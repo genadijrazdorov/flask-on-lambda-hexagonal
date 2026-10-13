@@ -1,10 +1,15 @@
+import os
+from pathlib import Path
 import pytest
 
 from flask_on_lambda.adapter.flask.app import create_app
 
 
 @pytest.fixture()
-def app():
+def app(tmp_path):
+    cwd = Path()
+    os.chdir(tmp_path)
+
     app = create_app()
     app.config.update(
         {
@@ -17,6 +22,7 @@ def app():
     yield app
 
     # clean up / reset resources here
+    os.chdir(cwd)
 
 
 @pytest.fixture()
