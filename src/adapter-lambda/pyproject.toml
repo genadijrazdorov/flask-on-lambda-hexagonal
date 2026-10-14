@@ -3,12 +3,11 @@ name = "flask-on-lambda-adapter-lambda"
 version = "0.1.0"
 description = ""
 authors = [{ name = "Genadij Razdorov", email = "genadijrazdorov@gmail.com" }]
-readme = "README.md"
-requires-python = "~=3.14.0"
-dependencies = []
+requires-python = "~= 3.14.0"
+dependencies = ["flask-on-lambda-adapter-flask @ file:///home/gr/projects/testing/flask-on-aws-lambda/src/adapter-flask"]
 
 [tool.poetry]
-packages = [{ include = "flask_on_lambda", from = "src" }]
+package-mode = false
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -16,5 +15,5 @@ build-backend = "poetry.core.masonry.api"
 
 [dependency-groups]
 dev = [
-    "aws-sam-cli (>=1.168.0,<2.0.0)"
+    "aws-sam-cli (>=1.169.0,<2.0.0)"
 ]
