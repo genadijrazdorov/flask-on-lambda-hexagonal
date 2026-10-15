@@ -4,12 +4,12 @@ from pathlib import Path
 from flask import Flask
 
 
-def create_app(test_config=None):
+def create_app(test_config=None, instance_parent: str = ""):
     # create and configure the app
     app = Flask(
         __name__,
         instance_relative_config=True,
-        instance_path=Path().absolute() / "instance",
+        instance_path=Path(instance_parent).absolute() / "instance",
     )
     app.config.from_mapping(
         SECRET_KEY="dev",
