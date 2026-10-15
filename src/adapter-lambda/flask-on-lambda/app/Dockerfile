@@ -3,8 +3,11 @@ COPY --from=public.ecr.aws/awsguru/aws-lambda-adapter:1.1.0 /lambda-adapter /opt
 
 WORKDIR /var/task
 # COPY app.py requirements.txt ./
-COPY * ./
+COPY ./adapter-lambda/flask-on-lambda/app ./
 RUN python3.14 -m pip install --no-cache-dir -r requirements.txt
+
+COPY ./adapter-flask ./adapter-flask
+RUN python3.14 -m pip install --no-cache-dir ./adapter-flask
 
 EXPOSE 8000
 
