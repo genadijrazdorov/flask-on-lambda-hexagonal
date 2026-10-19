@@ -1,11 +1,11 @@
 [project]
-name = "flask-on-lambda-adapter-lambda"
+name = "fol-deploy"
 version = "0.1.0"
 description = ""
 authors = [{ name = "Genadij Razdorov", email = "genadijrazdorov@gmail.com" }]
 requires-python = "~= 3.14.0"
 dependencies = [
-  "flask-on-lambda-adapter-flask @ file:///home/gr/projects/testing/flask-on-aws-lambda/src/adapter-flask",
+  "fol-adapter-flask @ file:///home/gr/projects/testing/flask-on-lambda/fol-adapter-flask",
 ]
 
 [tool.poetry]

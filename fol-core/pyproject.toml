@@ -1,12 +1,20 @@
 [project]
-name = "flask-on-aws-lambda"
+name = "fol-core"
 version = "0.1.0"
 description = ""
 authors = [{ name = "Genadij Razdorov", email = "genadijrazdorov@gmail.com" }]
-requires-python = "~= 3.14.0"
+readme = "README.md"
+requires-python = ">=3.14"
 dependencies = []
 
+[tool.poetry]
+packages = [{ include = "flask_on_lambda", from = "src" }]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+test = [
+    "pytest (>=9.1.1,<10.0.0)"
+]
