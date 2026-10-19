@@ -16,7 +16,7 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.dependencies]
-flask-on-lambda-adapter-flask = { develop = true }
+fol-adapter-flask = { develop = true }
 
 [dependency-groups]
 dev = ["aws-sam-cli (>=1.169.0,<2.0.0)"]

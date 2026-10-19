@@ -1292,15 +1292,30 @@ optional = false
 python-versions = "~= 3.14.0"
 groups = ["main"]
 files = []
-develop = false
+develop = true
 
 [package.dependencies]
 flask = ">=3.1.3,<4.0.0"
+fol-core = {path = "/home/gr/projects/testing/flask-on-lambda/fol-core"}
 gunicorn = ">=26.2.0,<27.0.0"
 
 [package.source]
 type = "directory"
 url = "../fol-adapter-flask"
+
+[[package]]
+name = "fol-core"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = ">=3.14"
+groups = ["main"]
+files = []
+develop = false
+
+[package.source]
+type = "directory"
+url = "../fol-core"
 
 [[package]]
 name = "gunicorn"
@@ -2857,4 +2872,4 @@ packaging = ">=24.0"
 [metadata]
 lock-version = "2.1"
 python-versions = "~= 3.14.0"
-content-hash = "ec1f359d5e0d6a1e04f1c4003e2e31c96e4f738ff88f24a6b6a45438f4d4e78e"
+content-hash = "bd121057469f95f7aba5fcd81bf29df6eb511953ac06c75e330cffca87a41c00"

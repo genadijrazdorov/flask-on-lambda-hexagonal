@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
 
+from flask_on_lambda.core.hello import hello
+
 from flask import Flask
 
 
@@ -29,7 +31,7 @@ def create_app(test_config=None, instance_parent: str = ""):
     # a simple page that says hello
     @app.route("/")
     def index():
-        return "Hello, World!"
+        return hello()
 
     return app
 
