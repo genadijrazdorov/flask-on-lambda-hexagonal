@@ -49,6 +49,14 @@ poetry run sam build
 
 ~~~
 
+#### Run locally
+
+~~~bash
+cd fol-deploy/flask-on-lambda
+poetry run sam local start-api
+
+~~~
+
 #### Deploy to aws
 
 ~~~bash
