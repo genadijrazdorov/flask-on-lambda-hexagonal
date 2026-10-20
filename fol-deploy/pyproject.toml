@@ -4,9 +4,7 @@ version = "0.1.0"
 description = ""
 authors = [{ name = "Genadij Razdorov", email = "genadijrazdorov@gmail.com" }]
 requires-python = "~= 3.14.0"
-dependencies = [
-  "fol-adapter-flask @ file:///home/gr/projects/testing/flask-on-lambda/fol-adapter-flask",
-]
+dependencies = ["fol-core==0.1.0", "fol-adapter-flask==0.1.0"]
 
 [tool.poetry]
 package-mode = false
@@ -16,7 +14,8 @@ requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.dependencies]
-fol-adapter-flask = { develop = true }
+fol-core = { develop = true, path = "../fol-core" }
+fol-adapter-flask = { develop = true, path = "../fol-adapter-flask" }
 
 [dependency-groups]
 dev = ["aws-sam-cli (>=1.169.0,<2.0.0)"]

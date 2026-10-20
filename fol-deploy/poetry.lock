@@ -1296,7 +1296,7 @@ develop = true
 
 [package.dependencies]
 flask = ">=3.1.3,<4.0.0"
-fol-core = {path = "/home/gr/projects/testing/flask-on-lambda/fol-core"}
+fol-core = "*"
 gunicorn = ">=26.2.0,<27.0.0"
 
 [package.source]
@@ -1311,7 +1311,7 @@ optional = false
 python-versions = ">=3.14"
 groups = ["main"]
 files = []
-develop = false
+develop = true
 
 [package.source]
 type = "directory"
@@ -2872,4 +2872,4 @@ packaging = ">=24.0"
 [metadata]
 lock-version = "2.1"
 python-versions = "~= 3.14.0"
-content-hash = "bd121057469f95f7aba5fcd81bf29df6eb511953ac06c75e330cffca87a41c00"
+content-hash = "cf0e715af87db5926fc28d1954c7cec8cd36979be7e05988acd5402960673e13"
