@@ -21,25 +21,24 @@ Resources:
         Variables:
           AWS_LWA_PORT: "8000"
       Events:
-        APIEvent:
-          Type: HttpApi # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+        HttpApiEvent:
+          Type: HttpApi
     Metadata:
-      Dockerfile: adapter-lambda/flask-on-lambda/app/Dockerfile
-      # DockerContext: ./app
-      DockerContext: ../../../src
+      Dockerfile: fol-deploy/flask-on-lambda/flask-on-lambda/Dockerfile
+      DockerContext: ../../../flask-on-lambda
       DockerTag: python3.14-v1
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
-  FlaskOnLambdaAPI:
-    Description: "API Gateway endpoint URL for Prod stage for Flask on Lambda function"
+  HelloWorldApi:
+    Description: "API Gateway endpoint URL for Prod stage for Hello World function"
     Value: !Sub "https://${ServerlessHttpApi}.execute-api.${AWS::Region}.${AWS::URL\
-      Suffix}/Prod/"
+      Suffix}/Prod/hello/"
   FlaskOnLambdaFunction:
     Description: "Flask on Lambda Function ARN"
     Value: !GetAtt FlaskOnLambdaFunction.Arn
   FlaskOnLambdaFunctionIamRole:
-    Description: "Implicit IAM Role created for Flask-on-Lambda function"
+    Description: "Implicit IAM Role created for FlaskOnLambdaFunction"
     Value: !GetAtt FlaskOnLambdaFunctionRole.Arn
